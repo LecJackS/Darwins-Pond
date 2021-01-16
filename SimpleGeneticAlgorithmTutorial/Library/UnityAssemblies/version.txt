@@ -1,0 +1,15 @@
+2017.1.0f3:2.8.2.0
+StandaloneWindows64
+I:/ProgramShiub/munity/Editor/Data/Managed/UnityEditor.dll
+I:/ProgramShiub/munity/Editor/Data/Managed/UnityEngine.dll
+I:/ProgramShiub/munity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+I:/ProgramShiub/munity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
+I:/ProgramShiub/munity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll
+I:/ProgramShiub/munity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll
+I:/ProgramShiub/munity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll
+I:/ProgramShiub/munity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
+I:/ProgramShiub/munity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
+I:/ProgramShiub/munity/Editor/Data\Managed/Mono.Cecil.dll
+I:\ProgramShiub\munity\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll
+I:/ProgramShiub/munity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll
+I:/ProgramShiub/munity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll

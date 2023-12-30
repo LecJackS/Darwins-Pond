@@ -10,7 +10,8 @@ let alive = [];
 let gen_num = 0;
 
 let LIFE = 100;
-let NUM_AGENTS = 300;
+let MAX_LIFE = 300;
+let NUM_AGENTS = 10;
 
 let TEMP_GLOBAL = 0;
 let TIME = 0;
@@ -37,7 +38,7 @@ p5.Graphics.prototype.remove = function() {
     this.elt.parentNode.removeChild(this.elt);
   }
   var idx = this._pInst._elements.indexOf(this);
-  // console.log(this._pInst);
+  console.log(this._pInst);
   if (idx !== -1) {
     this._pInst._elements.splice(idx, 1);
   }
@@ -200,12 +201,9 @@ function draw() {
 
   for (let i = 0; i < population.length; i++) {
     if (alive[i]){
-      if(animate){
-        
-        stroke(population[i].r, population[i].g, population[i].b, 255);
-        strokeWeight(1);
-        point(population[i].x, population[i].y);
-      }
+      stroke(population[i].r, population[i].g, population[i].b, 255);
+      strokeWeight(1);
+      point(population[i].x, population[i].y);
       // Save step on floor
       //console.log(floor_mat)
       //console.log(population[i].x)
@@ -235,9 +233,9 @@ function draw() {
       if (population[i].dna.fitness > MAX_LEN_LAST_EPISODE){
         if (population[i].dna.fitness > MAX_LEN){
           //MAX_LEN = population[i].walked;
-          MAX_LEN = round(population[i].dna.fitness, 2);
+          MAX_LEN = population[i].dna.fitness;
           if (MAX_LEN > LIFE){
-            LIFE = min(1000, LIFE * 2);
+            LIFE = min(MAX_LIFE, LIFE * 2);
           }
         }else{
           MAX_LEN_LAST_EPISODE = round(population[i].dna.fitness, 2);
@@ -524,7 +522,7 @@ class Ball {
     // Step on floor and save a 1
     //this.set_floor_value();
     //this.dna.fitness = min(LIFE, this.dna.fitness + 1 - penalty);
-    this.dna.fitness = min(LIFE, this.dna.fitness + 10*this.green_floor());//+ this.dark_floor());
+    this.dna.fitness = round(min(LIFE, this.dna.fitness + 10*this.green_floor()), 2);//+ this.dark_floor());
     this.life -= 1;
     if (this.is_dead()) {
       this.final_x = this.x;
@@ -794,8 +792,8 @@ function generation(population){
     // As long as we need individuals in the new population, fill it with children
     let children = [];
     // TODO: implement the reproduction
-    let genes_parent1 = new Ball();
-    let genes_parent2 = new Ball();
+    let genes_parent1;
+    let genes_parent2;
     //let child = new Ball();
     let child_genes = [];
     while (children.length < population.length - sel_pop.length){
@@ -811,10 +809,11 @@ function generation(population){
        //console.log(genes);
      // console.log(child);
         //// mutation
-        children.push(new Ball(child_genes));
+        let offspring = new Ball(child_genes);
+        children.push(offspring);
     }
       
-    
+    population = [];
     // return the new generation
  // console.log("sel_pop.concat(children)");
  // console.log(sel_pop.concat(children));
@@ -829,7 +828,7 @@ function algorithm(population){
     //let population = create_population(population_size, chrom_size)
     
     //answers = [];
-    
+
     population = generation(population);
     /*
     // while a solution has not been found :

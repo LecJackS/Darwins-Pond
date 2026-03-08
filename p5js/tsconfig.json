@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "none",
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "outDir": "dist"
+  },
+  "include": [
+    "sketch.ts",
+    "p5-globals.d.ts"
+  ],
+  "exclude": [
+    "dist",
+    "libraries",
+    "sketch copy.js",
+    "sketch copy 2.js",
+    "sketch copy 3.js"
+  ]
+}

@@ -1,0 +1,8 @@
+benchmarks/
+node_modules/
+tuning/
+The-Nature-of-Code-Examples/
+*.out.log
+*.err.log
+*.pid
+npm-debug.log*
